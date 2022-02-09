@@ -12,7 +12,7 @@ class AppWidget extends StatelessWidget {
    ));
     return MaterialApp(
       title: 'Spotify',
-      theme: ThemeData(primarySwatch: themeColor, backgroundColor: themeColor),
+      theme: ThemeData(backgroundColor: themeColor),
       debugShowCheckedModeBanner: false,
     ).modular();
   }
