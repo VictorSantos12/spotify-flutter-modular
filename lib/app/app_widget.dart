@@ -7,12 +7,12 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: themeColor,
+      statusBarColor: statusBarColor,
       statusBarBrightness: Brightness.light
    ));
     return MaterialApp(
       title: 'Spotify',
-      theme: ThemeData(backgroundColor: themeColor),
+      theme: ThemeData(primarySwatch: themeColor, backgroundColor: themeColor),
       debugShowCheckedModeBanner: false,
     ).modular();
   }

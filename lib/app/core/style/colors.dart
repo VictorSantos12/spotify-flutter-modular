@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const statusBarColor = Color.fromRGBO(000, 000, 000, 0.5);
+
 final MaterialColor themeColor = const MaterialColor(
   0xDD000000,
   const <int, Color>{
