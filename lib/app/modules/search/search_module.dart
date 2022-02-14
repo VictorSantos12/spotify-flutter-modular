@@ -4,12 +4,12 @@ import 'package:spotify_flutter_modular/app/modules/search/pages/search/search_p
 
 class SearchModule extends Module {
   @override
-  final List<Bind> binds = [
+  List<Bind> get binds => [
      Bind.lazySingleton((i) => SearchController()),
   ];
 
   @override
-  final List<ModularRoute> routes = [
+  List<ModularRoute> get routes => [
     ChildRoute('/', child: (_, args) => SearchPage())
   ];
 

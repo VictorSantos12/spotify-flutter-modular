@@ -4,12 +4,12 @@ import 'package:spotify_flutter_modular/app/modules/library/pages/library/librar
 
 class LibraryModule extends Module {
   @override
-  final List<Bind> binds = [
+  List<Bind> get binds => [
     Bind.lazySingleton((i) => LibraryController()),
   ];
 
   @override
-  final List<ModularRoute> routes = [
+  List<ModularRoute> get routes => [
     ChildRoute('/', child: (_, args) => LibraryPage())
   ];
 
