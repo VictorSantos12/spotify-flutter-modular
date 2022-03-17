@@ -1,6 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:spotify_flutter_modular/app/modules/user/pages/email_log/email_log_controller.dart';
-import 'package:spotify_flutter_modular/app/modules/user/pages/email_log/email_log_page.dart';
+import 'package:spotify_flutter_modular/app/modules/user/pages/login_email/login_email_controller.dart';
+import 'package:spotify_flutter_modular/app/modules/user/pages/login_email/login_email_page.dart';
 import 'package:spotify_flutter_modular/app/modules/user/pages/login/login_controller.dart';
 import 'package:spotify_flutter_modular/app/modules/user/pages/login/login_page.dart';
 

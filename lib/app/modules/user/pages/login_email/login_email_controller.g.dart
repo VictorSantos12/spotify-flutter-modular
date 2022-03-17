@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'email_log_controller.dart';
+part of 'login_email_controller.dart';
 
 // **************************************************************************
 // StoreGenerator

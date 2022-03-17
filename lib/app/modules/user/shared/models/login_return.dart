@@ -2,15 +2,14 @@ import 'dart:convert';
 
 import 'package:spotify_flutter_modular/app/modules/user/shared/models/user.dart';
 
-class Return {
+class LoginReturn {
 
   User user;
   String token;
-  Return({
+  LoginReturn({
     required this.user,
     required this.token,
   });
-
 
   Map<String, dynamic> toMap() {
     return {
@@ -19,8 +18,8 @@ class Return {
     };
   }
 
-  factory Return.fromMap(Map<String, dynamic> map) {
-    return Return(
+  factory LoginReturn.fromMap(Map<String, dynamic> map) {
+    return LoginReturn(
       user: User.fromMap(map['user']),
       token: map['token'] ?? '',
     );
@@ -28,5 +27,5 @@ class Return {
 
   String toJson() => json.encode(toMap());
 
-  factory Return.fromJson(String source) => Return.fromMap(json.decode(source));
+  factory LoginReturn.fromJson(String source) => LoginReturn.fromMap(json.decode(source));
 }

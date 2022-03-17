@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:spotify_flutter_modular/app/core/style/colors.dart';
-import './email_log_controller.dart';
+import 'login_email_controller.dart';
 
 class EmailLogPage extends StatefulWidget {
 

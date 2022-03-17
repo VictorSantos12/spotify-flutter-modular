@@ -1,17 +1,19 @@
 
 
+import 'dart:convert';
+
 import 'package:spotify_flutter_modular/app/core/dio/dio_custom.dart';
 import 'package:spotify_flutter_modular/app/modules/user/shared/models/home_return.dart';
 import 'package:spotify_flutter_modular/app/modules/user/shared/models/login.dart';
-import 'package:spotify_flutter_modular/app/modules/user/shared/models/return.dart';
+import 'package:spotify_flutter_modular/app/modules/user/shared/models/login_return.dart';
 
 class UserRepository {
 
-   Future<Return> login(Login login) {
+   Future<LoginReturn> login(Login login) {
      return CustomDio.authInstance
      .post('/login', data: login.toMap())
      .then((res) {
-       return res.data;
+       return LoginReturn.fromJson(json.encode(res.data));
      });
    }
 
@@ -19,7 +21,7 @@ class UserRepository {
     return CustomDio.authInstance
     .get('/')
     .then((res) {
-      return res.data;
+      return HomeReturn.fromJson(json.encode(res.data));
     });
   }
 }

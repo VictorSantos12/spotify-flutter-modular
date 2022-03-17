@@ -13,6 +13,11 @@ class SharedPrefsRepository {
     return _instanceRepository;
   }
 
+  static Future<void> clear() async {
+    prefs = await SharedPreferences.getInstance();
+    await prefs.clear();
+  }
+
  // ------ TOKEN DE ACESSO ------
  
 

@@ -4,12 +4,10 @@ class HomeReturn {
 
   bool ok;
   String id;
-  
   HomeReturn({
     required this.ok,
     required this.id,
   });
-
 
   Map<String, dynamic> toMap() {
     return {

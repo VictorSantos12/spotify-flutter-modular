@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:spotify_flutter_modular/app/core/auth_store/auth_store.dart';
 
 class AuthInterceptor extends Interceptor {
@@ -15,7 +14,7 @@ class AuthInterceptor extends Interceptor {
    String token = await authStore.getAccessToken();
 
    if(token != '') {
-     options.headers['Authorization'] = 'Baerer' + token;
+     options.headers['Authorization'] = 'Bearer ' + token;
    }
    return handler.next(options);
   }

@@ -1,3 +1,5 @@
+import 'package:asuka/asuka.dart' as asuka;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -13,6 +15,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Spotify',
       initialRoute: '/',
+      builder: asuka.builder,
       theme: ThemeData(
        backgroundColor: black, 
        visualDensity: VisualDensity.adaptivePlatformDensity),
