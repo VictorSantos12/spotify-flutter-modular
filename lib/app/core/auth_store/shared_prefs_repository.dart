@@ -34,9 +34,25 @@ class SharedPrefsRepository {
    }
  }
 
+
+ // ------ NOME DO USUÁRIO ------
+
+Future<void> userName(String data) async {
+  await prefs.setString('USER_NAME', data);
+}
+
+String get name {
+  var data = prefs.getString('USER_NAME');
+  if(data != null && data != '') {
+    return data.toString();
+  } else {
+    return '';
+  }
+}
+
  // ------ ID DO USUÁRIO ------
  
- Future<void> userId(String id) async  {
+ Future<void> userId(String id) async {
    await prefs.setString('USER_ID', id);
  }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:spotify_flutter_modular/app/core/style/colors.dart';
 import 'package:spotify_flutter_modular/app/core/style/size.dart';
@@ -11,6 +12,13 @@ class HomeConfigPage extends StatefulWidget {
 }
 
 class _HomeConfigPageState extends ModularState<HomeConfigPage, HomeConfigController> {
+
+  @override
+  void initState() {
+    super.initState();
+    controller.getUserName();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,33 +31,37 @@ class _HomeConfigPageState extends ModularState<HomeConfigPage, HomeConfigContro
            height: heightAll(context),
            width: widthAll(context),
            color: black,
-           child: Column(
-            children: [
-              InkWell(
-                onTap: () => controller.logOut(),
-                child: Container(
-                  padding: EdgeInsets.all(5),
-                  margin: EdgeInsets.all(10),
-                  alignment: Alignment.centerLeft,
-                  height: height(context, 0.06),
-                  width: widthAll(context),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Sair',
-                         style: TextStyle(color: white, fontSize: 15),
-                       ),
-                      Text(
-                        'Você entrou como',
-                         style: TextStyle(color: white, fontSize: 11),
-                       ),
-                    ],
+           child: Observer(
+             builder: (_) {
+               return Column(
+                children: [
+                  InkWell(
+                    onTap: () => controller.logOut(),
+                    child: Container(
+                      padding: EdgeInsets.all(5),
+                      margin: EdgeInsets.all(10),
+                      alignment: Alignment.centerLeft,
+                      height: height(context, 0.06),
+                      width: widthAll(context),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Sair',
+                             style: TextStyle(color: white, fontSize: 15),
+                           ),
+                          Text(
+                            'Você entrou como ${controller.userName}',
+                             style: TextStyle(color: white, fontSize: 11),
+                           ),
+                        ],
+                      ),
+                     ),
                   ),
-                 ),
-              ),
-             ],
+                 ],
+               );
+             }
            ),
          ),
       ),

@@ -41,5 +41,16 @@ abstract class _AuthStore with Store {
     }
   }
 
+  // Obtém Nome do Usuário 
+
+  Future<String> getUserName() async {
+    final prefs = await SharedPrefsRepository.instance;
+    if(prefs.name != '') {
+      return prefs.name;
+    } else {
+      return '';
+    }
+  }
+
 }
 

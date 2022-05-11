@@ -6,6 +6,6 @@ const white = Color(0xFFFFFFFF);
 const green = Color(0xFF00c853);
 const darkGrey = Color(0xAA777777);
 const lightGrey = Color(0xFFE0E0E0);
-const darkerGrey = Color.fromARGB(255, 24, 24, 24);
+const darkerGrey = Color.fromARGB(255, 32, 32, 32);
 const lightGradient = Color.fromARGB(255, 56, 51, 37);
 const darkGradient = Color.fromRGBO(000, 000, 000, 0.5);

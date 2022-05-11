@@ -72,6 +72,7 @@ abstract class _EmailLogControllerBase with Store {
       final loginReturn = await userService.login(login);
       if(loginReturn.token != '') {
         await prefs.userAccess(loginReturn.token);
+        await prefs.userName(loginReturn.user.name);
         final accessData = await userService.home();
         if(accessData.ok) {
          await prefs.userId(accessData.id);
